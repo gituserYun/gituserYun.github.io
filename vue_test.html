@@ -6,19 +6,20 @@
   <title>TEST SERVER</title>
 </head>
 <body>
-	<div id="app">
-		<!--취약한 코드-->
-	  <?php echo htmlspecialchars($_GET['msg']); ?> 
-	</div>
-	<script>
-	  Vue.createApp({
-	    data() {
-	      return {
-	        message: 'Hello Vue!'
-	      }
-	    }
-	  }).mount('#app')
-	</script>	
+<div id="app">
+  <div v-pre>
+    <?php echo htmlspecialchars($_GET['msg']); ?>
+  </div>
+</div>
+<script>
+Vue.createApp({
+  data() {
+    return {
+      message: 'Hello Vue!'
+    }
+  }
+}).mount('#app')
+</script>
 
 </body>
 </html>
