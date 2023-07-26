@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div id="app">
-	  <?php echo htmlspecialchars($_GET['msg']); ?>
+		{{ message }} <!--취약한 코드-->
 	</div>
 	<script>
 	  Vue.createApp({
@@ -21,4 +21,3 @@
 
 </body>
 </html>
-
