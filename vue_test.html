@@ -6,10 +6,8 @@
   <title>TEST SERVER</title>
 </head>
 <body>
-	
 	<div id="app">
-		<!-- <?php echo htmlspecialchars($_GET['msg']); ?> -->
-		{{ message }}
+	  <?php echo htmlspecialchars($_GET['msg']);
 	</div>
 	<script>
 	  Vue.createApp({
