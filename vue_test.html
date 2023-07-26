@@ -7,9 +7,8 @@
 </head>
 <body>
 <div id="app">
-  <div v-pre>
-    <?php echo htmlspecialchars($_GET['msg']); ?>
-  </div>
+    <!--<?php echo htmlspecialchars($_GET['msg']); ?>-->
+    {{ message }}
 </div>
 <script>
 Vue.createApp({
