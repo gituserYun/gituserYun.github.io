@@ -1,13 +1,9 @@
 <script src="https://unpkg.com/vue@3"></script>
 <div id="app">
-	<?php echo htmlspecialchars($_GET['msg']); ?>
+	<h1>Hello ?name=${escapeHTML(name)}</h1>
 </div>
 <script>
-  Vue.createApp({
-    data() {
-      return {
-        message: 'Hello Vue!'
-      }
-    }
-  }).mount('#app')
+  new Vue({
+    el: '#app'
+  });
 </script>
