@@ -7,7 +7,7 @@
     <script>
     	const iframe = document.createElement("iframe");
     	const img = document.createElement("img");
-    	iframe.src = "http://0.0.0.0:8000/search?query=DH{";
+    	iframe.src = "http://localhost:8000/search?query=DH{";
     	iframe.onload => () {
     		img.src = `https://gwhuvrw.request.dreamhack.games/${iframe.contentWindow.frames.length}`;
     	};
