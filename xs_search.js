@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Dreamhack(XS-Search)</title>
-</head>
-<body>
-
 <iframe id="frame"></iframe>
 <img id="img">
 <script>
@@ -47,6 +40,3 @@
 
     exploit()
 </script>
-
-</body>
-</html>
