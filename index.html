@@ -3,12 +3,20 @@
 <head>
   <meta charset="utf-8">
   <!-- <meta http-equiv="refresh" content="0;url=./Dremhack_Exploit/csp_bypass_advanced.html"> -->
-  <meta http-equiv="refresh" content="0;url=./Dremhack_Exploit/switching_command.php">
+  <!-- <meta http-equiv="refresh" content="0;url=./Dremhack_Exploit/switching_command.php"> -->
   <title>TEST SERVER</title>
 </head>
 <body>
   <h1>Test Page!</h1>
-  
-</body>
+  <script>
+    function reqListener (){
+     console.log(this.responseText);
+    }
+    
+    Req.addEventListener("load", reqListener); 
+    oReq.open("GET", "http://192.168.0.129/"); 
+    oReq.send();</blockquote>      
+  </script>
+  </body>
 </html>
 
