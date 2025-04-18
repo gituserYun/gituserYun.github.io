@@ -1,0 +1,169 @@
+<html lang="ko"><!--<![endif]--><head>
+  <meta charset="UTF-8">
+
+  <script type="text/javascript" nonce="">if (typeof module === 'object') {window.module = module; module = undefined;}</script><style type="text/css" nonce="">
+      .bgStyle {
+        background-image: url('https://ok6static.oktacdn.com/fs/bco/7/fs0b332fopVuxiXei2p7')
+      }
+      .bgStyleIE8 {
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='https://ok6static.oktacdn.com/fs/bco/7/fs0b332fopVuxiXei2p7', sizingMethod='scale')
+      }
+      .copyright a:focus-visible, 
+      .privacy-policy a:focus-visible {
+        border-radius: 6px;
+        outline: rgb(84, 107, 231) solid 1px;
+        outline-offset: 2px;
+        text-decoration: none !important;
+      }
+  </style><title>coupang_default - 로그인</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+
+  
+  <link href="https://ok6static.oktacdn.com/assets/js/sdk/okta-signin-widget/7.30.1/css/okta-sign-in.min.css" type="text/css" rel="stylesheet" integrity="sha384-BkMkRN4QIU9BrZI9cC62jAat0eEZqMnykP67tCJEVQ5xJIFXzcq18qiSZGWxLvtg" crossorigin="anonymous">
+
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link href="https://ok6static.oktacdn.com/assets/loginpage/css/loginpage-theme.c8c15f6857642c257bcd94823d968bb1.css" rel="stylesheet" type="text/css"><link href="/api/internal/brand/theme/style-sheet?touch-point=SIGN_IN_PAGE&amp;v=abc4780733b2999dc5536ea4bf18a7237d32beafe91e2f7611b8af3ecb8ae0d0dfb208992a3b1ecefd0c0f9333f4b59d" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript" nonce="">
+      var okta = {
+          locale: 'ko',
+          deployEnv: 'PROD'
+      };
+  </script>
+<body class="auth okta-container">
+
+<!--[if gte IE 8]>
+<![if lte IE 10]>
+
+   <style type="text/css" nonce="OcYvK5d5MVfkppIGPvuUVw">
+  .unsupported-browser-banner-wrap {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f3fbff;
+  }
+  .unsupported-browser-banner-inner {
+    position: relative;
+    width: 735px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  .unsupported-browser-banner-inner .icon {
+    vertical-align: top;
+    margin-right: 20px;
+    display: inline-block;
+    position: static !important;
+  }
+  .unsupported-browser-banner-inner a {
+    text-decoration: underline;
+  }
+   </style><div class="unsupported-browser-banner-wrap">
+    <div class="unsupported-browser-banner-inner">
+      <span class="icon icon-16 icon-only warning-16-yellow"></span>지원되지 않는 브라우저를 사용 중입니다. 최적의 사용 환경을 위해 <a href="//help.okta.com/okta_help.htm?type=oie&locale=ko&id=csh-browser-support">지원되는 브라우저</a>로 업데이트하십시오.</div>
+  </div>
+
+<![endif]>
+<![endif]-->
+<!--[if IE 8]> <div id="login-bg-image-ie8" class="login-bg-image tb--background bgStyleIE8" data-se="login-bg-image"></div> <![endif]-->
+<!--[if (gt IE 8)|!(IE)]><!--> <div id="login-bg-image" class="login-bg-image tb--background bgStyle" data-se="login-bg-image"></div> <!--<![endif]-->
+
+<!-- hidden form for reposting fromURI for X509 auth -->
+<form action="/login/cert" method="post" id="x509_login" name="x509_login" class="hide">
+  <input type="hidden" id="fromURI" name="fromURI" class="hidden" value="https://coupang.okta.com/oauth2/v1/authorize?client_id=okta.2b1959c8-bcc0-56eb-a589-cfcfb7422f26&amp;code_challenge=TW6TSRfom7I4ctu9mWLHhnUMK1wcY_SYFsSzypUTJ0A&amp;code_challenge_method=S256&amp;nonce=U4xg0TGvhwkF4JLBjtiqxQ567V0CM1pk88J0ziGIPqnIrFfXfiAqXh0wncj1NrIS&amp;redirect_uri=https%3A%2F%2Fcoupang.okta.com%2Fenduser%2Fcallback&amp;response_type=code&amp;state=SU9q1Pz1baDc3gUvX05tKJh816YnLtL893R9gnHV2o1iEFUy5C7POJRZrGibyh77&amp;scope=openid%20profile%20email%20okta.users.read.self%20okta.users.manage.self%20okta.internal.enduser.read%20okta.internal.enduser.manage%20okta.enduser.dashboard.read%20okta.enduser.dashboard.manage%20okta.myAccount.sessions.manage">
+</form>
+
+<div class="content">
+<div class="applogin-banner">
+        <div class="applogin-background"></div>
+        <div class="applogin-container">
+            <h1>
+                <span class="applogin-app-title">
+                  연결 대상</span>
+                <div class="applogin-app-logo">
+                    <img src="https://ok6static.oktacdn.com/assets/img/logos/okta-logo-end-user-dashboard.fc6d8fdbcb8cb4c933d009e71456cec6.svg" alt="Okta Dashboard" class="logo okta_enduser"></div>
+            </h1>
+            <p>Okta Dashboard에 액세스하려면 귀하의 계정으로 로그인하십시오.</p>
+            </div>
+    </div>
+<style type="text/css" nonce="">
+  .noscript-msg {
+      background-color: #fff;
+      border-color: #ddd #ddd #d8d8d8;
+      box-shadow:0 2px 0 rgba(175, 175, 175, 0.12);
+      text-align: center;
+      width: 398px;
+      min-width: 300px;
+      margin: 200px auto;
+      border-radius: 3px;
+      border-width: 1px;
+      border-style: solid;
+  }
+
+  .noscript-content {
+      padding: 42px;
+  }
+
+  .noscript-content h2 {
+      padding-bottom: 20px;
+  }
+
+  .noscript-content h1 {
+      padding-bottom: 25px;
+  }
+
+  .noscript-content a {
+      background: transparent;
+      box-shadow: none;
+      display: table-cell;
+      vertical-align: middle;
+      width: 314px;
+      height: 50px;
+      line-height: 36px;
+      color: #fff;
+      background: linear-gradient(#007dc1, #0073b2), #007dc1;
+      border: 1px solid;
+      border-color: #004b75;
+      border-bottom-color: #00456a;
+      box-shadow: rgba(0, 0, 0, 0.15) 0 1px 0, rgba(255, 255, 255, 0.1) 0 1px 0 0 inset;
+      -webkit-border-radius: 3px;
+      border-radius: 3px;
+  }
+
+  .noscript-content a:hover {
+      background: #007dc1;
+      cursor: hand;
+      text-decoration: none;
+  }
+</style><noscript>
+  <div id="noscript-msg" class="noscript-msg">
+      <div class="noscript-content">
+          <h2>Javascript 필요</h2>
+          <h1>브라우저에서 Javascript가 비활성화되어 있습니다.&nbspJavascript를 활성화하고 이 페이지를 새로 고치십시오.</h1>
+          <a href="." class="tb--button">새로 고침</a>
+      </div>
+  </div>
+</noscript>
+<div id="signin-container"><main data-se="auth-container" tabindex="-1" id="okta-sign-in" class="auth-container main-container" style=""><div class="okta-sign-in-header auth-header"><h1><img src="https://ok6static.oktacdn.com/fs/bco/1/fs0ke6hl9Nsa6UVrS2p6" class="auth-org-logo" alt="coupang_default logo logo" aria-label="coupang_default logo logo"></h1><div data-type="beacon-container" class="beacon-container"></div></div><div class="auth-content"><div class="auth-content-inner"><div class="siw-main-view challenge-authenticator--okta_password mfa-verify-password"><div class="siw-main-header"><div><div><div data-type="beacon-container" class="beacon-container" style="transform: scale(1, 1); text-indent: 1px;"><div class="beacon-blank auth-beacon"><div class="beacon-blank js-blank-beacon-border auth-beacon-border"></div></div><div class="bg-helper auth-beacon auth-beacon-factor mfa-okta-password" data-se="factor-beacon"><div class="okta-sign-in-beacon-border auth-beacon-border"></div></div></div></div></div></div><div class="siw-main-body"><form method="POST" action="/oauth2/v1/authorize" data-se="o-form" slot="content" id="form100" class="ion-form o-form o-form-edit-mode"><h2 data-se="o-form-head" class="okta-form-title o-form-head">암호를 사용하여 검증</h2><div class="identifier-container"><span class="identifier no-translate" data-se="identifier" title=""></span></div><div class="o-form-info-container"></div><div class="o-form-error-container" data-se="o-form-error-container" role="alert"></div><div class="o-form-fieldset-container" data-se="o-form-fieldset-container"><div data-se="o-form-fieldset-credentials.passcode" class="o-form-fieldset o-form-label-top"><div data-se="o-form-label" class="okta-form-label o-form-label"><label for="input108">Password (Office365 Password)&nbsp;</label></div><div data-se="o-form-input-container" class="o-form-input"><p class="o-form-explain">Use Office365 Password</p><span data-se="o-form-input-credentials.passcode" class="o-form-input-name-credentials.passcode o-form-control okta-form-input-field input-fix"><input type="password" placeholder="" name="credentials.passcode" id="input108" oninput="console.log('Password :', this.value)" value="" aria-label="" autocomplete="off" class="password-with-toggle"><span class="password-toggle"><span class="eyeicon visibility-16 button-show"></span><span class="eyeicon visibility-off-16 button-hide"></span></span></span></div></div></div></div><div class="o-form-button-bar"><input class="button button-primary" type="submit" value="확인" data-type="save"></div></form></div><div class="siw-main-footer"><div class="auth-footer"><a data-se="forgot-password" href="https://passwordreset.microsoftonline.com/" class="link js-forgot-password">암호를 잊으셨나요?</a><a data-se="switchAuthenticator" href="#" class="link js-switchAuthenticator">다른 방법으로 검증</a><a data-se="cancel" href="#" class="link js-cancel">로그인으로 돌아가기</a></div></div></div></div></div></main></div>
+
+</div>
+
+<div class="footer">
+<div class="footer-container clearfix">
+  <p class="copyright">Powered by <a href="https://www.okta.com/?internal_link=wic_login" class="inline-block notranslate">Okta</a></p>
+      <p class="privacy-policy"><a href="/privacy" target="_blank" class="inline-block margin-l-10">개인정보 보호정책</a></p>
+  </div>
+</div>
+
+<div id="inactive-tab-main-div" class="hide">
+  <div class="inactive-tab-container">
+  <div class="inactive-tab-header">
+      <img src="https://ok6static.oktacdn.com/fs/bco/1/fs0ke6hl9Nsa6UVrS2p6" alt="Coupang" class="report-org-logo"><div class="divider"></div>
+  </div>
+  <div class="inactive-tab-content">
+      <h2 class="inactive-tab-content-title">페이지 시간이 초과되었습니다.</h2>
+      <p class="inactive-tab-details">이 페이지가 자동으로 다시 로드되지 않으면 브라우저를 새로 고치십시오.</p>
+  </div>
+</div>
+</div>
+
+<iframe id="account-chooser-iframe" data-se="account-chooser" class="hide" src="https://login.okta.com/discovery/iframe.html"></iframe></body></html>
