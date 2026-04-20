@@ -13,7 +13,7 @@
   <a href='javascript:alert(3);?pagege=1&test=3'>Click-03</a><br>
   <a href='javascript:alert(4);?pagege=1&test=4' target="_blank">Click-04</a><br>
   <a href='javascript:alert(5);window.open(`/lab/xss_lab_01.html`)//?pagege=1&test=5' target="_blank">Click-05</a><br>
-  <a href="javascript:throw new window[Function[typeof true][5]+Function[typeof true][3]+Function[typeof true][4]+Function[typeof 1][5]+Function[typeof alert][4]][Function[typeof alert][2]+Function[typeof true][5]+Function[typeof true][3]+Function[typeof true][3]]" target="_blank">Click-06</a></br>
+  <a href="javascript:var f=typeof alert;var b=typeof true;var n=typeof 1;var sf=typeof f;var u=typeof undefined;f[1]+n[5]+b[3]+b[4]+b[5]+f[4]+b[4]+u[2]+sf[0]+f[5]+f[4]+b[4]//" target="_blank">Click-06</a></br>
   
   <!--
   <a href='JaVAsCripT:alert(2)'>Click-02!</a><br>
