@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deep Link PoC TEST</title>
+<style>
+  body {
+    font-family: sans-serif;
+    padding: 24px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  h3 { font-size: 1.3rem; }
+  p { font-size: 1rem; line-height: 1.5; word-break: break-all; }
+  label { font-size: 14px; }
+  input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #444;
+    margin: 10px 0 20px;
+  }
+  a.btn {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 16px 24px;
+    background: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  .target-line {
+    margin: 8px 0 24px;
+    color: #666;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+  <h3>Deep Link PoC TEST</h3>
+  <p>아래 입력창에 테스트할 URL을 입력한 뒤, 스킴 버튼을 눌러 딥링크를 트리거</p>
+
+  <label for="target-scheme">Scheme (공백 시, scheme 기본 스킴 사용)</label>
+  <input id="target-scheme" type="text" value="scheme" />
+
+  <label for="target-param">Query Parameter (공백 시, url 사용)</label>
+  <input id="target-param" type="text" value="url" />
+
+  <label for="target-url">TEST URL (파라미터 값)</label>
+  <input id="target-url" type="text" value="https://gituserYun.github.io/index.html" />
+
+  <label class="checkbox-row">
+    <input id="encode-toggle" type="checkbox"/>
+    URL 인코딩 적용 (encodeURIComponent)
+  </label>
+
+  <div id="link-list"></div>
+
+  <script>
+    // 스킴 중 ?url= 파라미터를 받는 호스트 목록
+    const SCHEME_HOSTS = [
+      { scheme: 'scheme', host: 'host', hasUrlParam: true },
+    ];
+
+
+    const schemeInput = document.getElementById('target-scheme');
+    const paramInput = document.getElementById('target-param');
+    const urlInput = document.getElementById('target-url');
+    const encodeToggle = document.getElementById('encode-toggle');
+    const listEl = document.getElementById('link-list');
+
+    function buildUri(entry, scheme, param) {
+      if (!entry.hasUrlParam) {
+        return `${scheme}://${entry.host}`;
+      }
+      const raw = urlInput.value;
+      const value = encodeToggle.checked ? encodeURIComponent(raw) : raw;
+      return `${scheme}://${entry.host}?${param}=${value}`;
+    }
+
+    function render() {
+      listEl.innerHTML = '';
+      // Parameter 입력값이 있으면 사용, 비어 있으면 url
+      const param = paramInput.value.trim() || 'url';
+      const seen = new Set();
+      let idx = 0;
+      SCHEME_HOSTS.forEach((entry) => {
+        // Scheme 입력값이 있으면 모든 링크에 전역 적용, 비어 있으면 항목별 기본 스킴 사용
+        const scheme = schemeInput.value.trim() || entry.scheme;
+
+        // scheme + host 기준 중복 제거
+        const key = `${scheme}://${entry.host}`;
+        if (seen.has(key)) return;
+        seen.add(key);
+
+        const uri = buildUri(entry, scheme, param);
+
+        const btn = document.createElement('a');
+        btn.className = 'btn';
+        btn.href = uri;
+        btn.style.marginTop = idx === 0 ? '0' : '4px';
+        btn.textContent = `딥링크 실행 - ${scheme}://${entry.host}`;
+
+        const info = document.createElement('p');
+        info.className = 'target-line';
+        info.textContent = `target: ${uri}`;
+
+        listEl.appendChild(btn);
+        listEl.appendChild(info);
+        idx++;
+      });
+    }
+
+    schemeInput.addEventListener('input', render);
+    paramInput.addEventListener('input', render);
+    urlInput.addEventListener('input', render);
+    encodeToggle.addEventListener('change', render);
+    render();
+  </script>
+</body>
+</html>
