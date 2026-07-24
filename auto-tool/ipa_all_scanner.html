@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPA All Scanner</title>
+<style>
+  body {
+    font-family: sans-serif;
+    padding: 24px;
+    max-width: 680px;
+    margin: 0 auto;
+    color: #222;
+  }
+  h3 { font-size: 1.3rem; margin-bottom: 4px; }
+  p { font-size: 1rem; line-height: 1.5; word-break: break-all; }
+  .sub { color: #666; font-size: 13px; margin-top: 0; }
+
+  .step {
+    margin-top: 28px;
+    padding: 16px;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    background: #fafafa;
+  }
+  .step h4 {
+    margin: 0 0 8px;
+    font-size: 15px;
+  }
+  .step p {
+    font-size: 13px;
+    color: #555;
+    margin: 4px 0 10px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: #fff;
+    cursor: pointer;
+  }
+  button:hover:not(:disabled) { background: #111; }
+  button:disabled { background: #bbb; cursor: not-allowed; }
+  button.secondary {
+    background: #eee;
+    color: #333;
+    margin-left: 8px;
+  }
+  button.secondary:hover:not(:disabled) { background: #ddd; }
+
+  input[type="file"] {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+  }
+
+  #folder-status, #ipa-file-name {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 13px;
+    color: #666;
+  }
+  .status-ok { color: #1a7f37 !important; font-weight: bold; }
+  .status-error { color: #c62828 !important; font-weight: bold; }
+
+  #progress {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #444;
+  }
+
+  #log {
+    margin-top: 12px;
+    background: #1e1e1e;
+    color: #d4d4d4;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: 'SFMono-Regular', Consolas, Menlo, 'Liberation Mono', monospace;
+    font-size: 12px;
+    line-height: 1.6;
+    max-height: 260px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+  }
+
+  #summary {
+    margin-top: 14px;
+    font-size: 14px;
+  }
+  #summary ul { margin: 6px 0 0; padding-left: 20px; }
+
+  .warn-box {
+    margin-top: 14px;
+    padding: 10px 14px;
+    background: #fff8e1;
+    border: 1px solid #ffe082;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #7a5b00;
+  }
+</style>
+</head>
+<body>
+  <h3>IPA All Scanner</h3>
+  <p class="sub">.ipa 파일 하나로 URL / API-KEY / Scheme(딥링크) 스캔을 한 번에 실행하고, 3개 시트짜리 엑셀 결과를 로컬 폴더에 저장합니다. 파일은 서버로 전송되지 않고 브라우저 안에서만 처리됩니다.</p>
+
+  <div class="step">
+    <h4>① 결과 저장 폴더 연결</h4>
+    <p>
+      브라우저 보안 정책상 웹페이지가 임의로 로컬 폴더를 만들 수 없어서, 최초 1회만
+      폴더 선택창에서 <strong>"C: (로컬 디스크)"</strong>를 선택해주세요.
+      그 안에 <strong>gituseryun_scan</strong> 폴더가 없으면 자동으로 생성되고, 있으면 그대로 재사용됩니다.
+      이후에는 브라우저가 연결 정보를 기억하므로 다시 선택할 필요가 없습니다 (권한 재확인만 나올 수 있음).
+    </p>
+    <button id="connect-folder-btn">폴더 연결</button>
+    <button id="reset-folder-btn" class="secondary" style="display:none;">연결 초기화</button>
+    <span id="folder-status">연결 안 됨</span>
+    <div class="warn-box">
+      ⚠ Chrome 또는 Edge 브라우저에서만 동작합니다 (File System Access API 필요). Safari/Firefox는 지원하지 않습니다.
+    </div>
+  </div>
+
+  <div class="step">
+    <h4>② IPA 파일 선택</h4>
+    <p>분석할 .ipa 파일을 선택하세요.</p>
+    <input id="ipa-file-input" type="file" accept=".ipa" />
+    <span id="ipa-file-name">선택된 파일 없음</span>
+  </div>
+
+  <div class="step">
+    <h4>③ 스캔 시작</h4>
+    <p>결과 파일명: <code>[ipa파일명]-[YYYY-MM-DD].xlsx</code> (같은 이름으로 재실행 시 덮어씀)</p>
+    <button id="scan-btn" disabled>스캔 시작 &amp; 저장</button>
+    <div id="progress"></div>
+    <div id="log"></div>
+    <div id="summary"></div>
+  </div>
+
+  <script src="../js/jszip.min.js"></script>
+  <script src="../js/xlsx.full.min.js"></script>
+  <script src="../js/bplist-parser.js"></script>
+  <script src="../js/ipa_all_scanner.js"></script>
+</body>
+</html>
