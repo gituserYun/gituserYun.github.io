@@ -48,6 +48,66 @@
     color: #666;
     font-size: 13px;
   }
+
+  .ref-heading {
+    margin-top: 40px;
+    font-size: 1.1rem;
+  }
+
+  .mac-window {
+    margin-top: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #1e1e1e;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+  .mac-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: linear-gradient(#3a3a3a, #2d2d2d);
+    position: relative;
+  }
+  .mac-titlebar .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .mac-titlebar .dot.red { background: #ff5f56; }
+  .mac-titlebar .dot.yellow { background: #ffbd2e; }
+  .mac-titlebar .dot.green { background: #27c93f; }
+  .mac-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #9a9a9a;
+    font-size: 12px;
+  }
+  .copy-btn {
+    margin-left: auto;
+    background: #4a4a4a;
+    color: #eee;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .copy-btn:hover { background: #5a5a5a; }
+  .copy-btn.copied { background: #27c93f; color: #123; }
+  .mac-body {
+    margin: 0;
+    padding: 18px;
+    color: #e6e6e6;
+    font-family: 'SFMono-Regular', Consolas, Menlo, 'Liberation Mono', monospace;
+    font-size: 13px;
+    line-height: 1.7;
+    overflow-x: auto;
+    white-space: pre;
+  }
+  .mac-body .cmt { color: #6a9955; }
 </style>
 </head>
 <body>
@@ -72,6 +132,37 @@
   </label>
 
   <div id="link-list"></div>
+
+  <h3 class="ref-heading">참고) adb 명령어</h3>
+  <div class="mac-window">
+    <div class="mac-titlebar">
+      <span class="dot red"></span>
+      <span class="dot yellow"></span>
+      <span class="dot green"></span>
+      <span class="mac-title">terminal</span>
+      <button class="copy-btn" id="copy-adb-btn">Copy</button>
+    </div>
+    <pre class="mac-body" id="adb-code"><code><span class="cmt"># Activity 실행</span>
+adb shell am start -n &lt;package&gt;/&lt;activity&gt;
+
+<span class="cmt"># 예시</span>
+adb shell am start -n com.example.app/.MainActivity
+
+<span class="cmt"># Action 지정 실행</span>
+adb shell am start -a android.intent.action.VIEW -d "https://example.com"
+
+<span class="cmt"># Extra 데이터 포함</span>
+adb shell am start -n com.example.app/.TargetActivity --es "key" "value"
+
+<span class="cmt"># Broadcast 전송</span>
+adb shell am broadcast -a com.example.app.ACTION_NAME
+
+<span class="cmt"># Service 시작</span>
+adb shell am startservice -n com.example.app/.TargetService
+
+<span class="cmt"># Exported 컴포넌트 취약점 점검 시 (권한 우회 테스트)</span>
+adb shell am start -n com.example.app/.ExportedActivity -a android.intent.action.MAIN</code></pre>
+  </div>
 
   <script>
     // 스킴 중 ?url= 파라미터를 받는 호스트 목록
@@ -136,6 +227,20 @@
     urlInput.addEventListener('input', render);
     encodeToggle.addEventListener('change', render);
     render();
+
+    const copyAdbBtn = document.getElementById('copy-adb-btn');
+    const adbCode = document.getElementById('adb-code');
+    copyAdbBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(adbCode.innerText).then(() => {
+        const original = copyAdbBtn.textContent;
+        copyAdbBtn.textContent = 'Copied!';
+        copyAdbBtn.classList.add('copied');
+        setTimeout(() => {
+          copyAdbBtn.textContent = original;
+          copyAdbBtn.classList.remove('copied');
+        }, 1500);
+      });
+    });
   </script>
 </body>
 </html>
