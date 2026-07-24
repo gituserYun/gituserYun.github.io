@@ -57,6 +57,9 @@
   <label for="target-scheme">Scheme</label>
   <input id="target-scheme" type="text" placeholder="scheme 입력" />
 
+  <label for="target-host">Host</label>
+  <input id="target-host" type="text" placeholder="host 입력" />
+
   <label for="target-param">Query Parameter</label>
   <input id="target-param" type="text" placeholder="url 입력" />
 
@@ -78,18 +81,19 @@
 
 
     const schemeInput = document.getElementById('target-scheme');
+    const hostInput = document.getElementById('target-host');
     const paramInput = document.getElementById('target-param');
     const urlInput = document.getElementById('target-url');
     const encodeToggle = document.getElementById('encode-toggle');
     const listEl = document.getElementById('link-list');
 
-    function buildUri(entry, scheme, param) {
+    function buildUri(entry, scheme, host, param) {
       if (!entry.hasUrlParam) {
-        return `${scheme}://${entry.host}`;
+        return `${scheme}://${host}`;
       }
       const raw = urlInput.value;
       const value = encodeToggle.checked ? encodeURIComponent(raw) : raw;
-      return `${scheme}://${entry.host}?${param}=${value}`;
+      return `${scheme}://${host}?${param}=${value}`;
     }
 
     function render() {
@@ -99,21 +103,22 @@
       const seen = new Set();
       let idx = 0;
       SCHEME_HOSTS.forEach((entry) => {
-        // Scheme 입력값이 있으면 모든 링크에 전역 적용, 비어 있으면 항목별 기본 스킴 사용
+        // Scheme/Host 입력값이 있으면 모든 링크에 전역 적용, 비어 있으면 항목별 기본값 사용
         const scheme = schemeInput.value.trim() || entry.scheme;
+        const host = hostInput.value.trim() || entry.host;
 
         // scheme + host 기준 중복 제거
-        const key = `${scheme}://${entry.host}`;
+        const key = `${scheme}://${host}`;
         if (seen.has(key)) return;
         seen.add(key);
 
-        const uri = buildUri(entry, scheme, param);
+        const uri = buildUri(entry, scheme, host, param);
 
         const btn = document.createElement('a');
         btn.className = 'btn';
         btn.href = uri;
         btn.style.marginTop = idx === 0 ? '0' : '4px';
-        btn.textContent = `딥링크 실행 - ${scheme}://${entry.host}`;
+        btn.textContent = `딥링크 실행 - ${scheme}://${host}`;
 
         const info = document.createElement('p');
         info.className = 'target-line';
@@ -126,6 +131,7 @@
     }
 
     schemeInput.addEventListener('input', render);
+    hostInput.addEventListener('input', render);
     paramInput.addEventListener('input', render);
     urlInput.addEventListener('input', render);
     encodeToggle.addEventListener('change', render);
